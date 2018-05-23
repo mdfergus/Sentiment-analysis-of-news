@@ -5,13 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack -w & nodemon main.js -e html,js,css --ignore public",
-    "start": "node main"
+    "start": "nodemon main",
+    "seed": "node server/db/seed.js"
   },
-  "keywords": [
-    "react",
-    "redux",
-    "skeleton"
-  ],
+  "keywords": ["react", "redux", "skeleton"],
   "dependencies": {
     "body-parser": "^1.18.2",
     "chalk": "^2.4.1",
