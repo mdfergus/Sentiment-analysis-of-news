@@ -5,9 +5,9 @@ const CampusUnit = props => {
   const info = props.info;
 
   return (
-    <div className="row school" key={info.id}>
+    <div className="grow row school" key={info.id}>
       <div className="column">
-        <Link to={`/campus/${info.id}`}>
+        <Link to={`/campuses/${info.id}`}>
           <h3>{info.name}</h3>
         </Link>
         <p className="bold">Address: {info.address}</p>

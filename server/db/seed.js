@@ -12,35 +12,40 @@ const students = [
     firstName: 'Nick',
     lastName: 'Bixby',
     email: 'nick.bixby@usafa.edu',
-    imageUrl: 'https://placem.at/people?w=350&random=1',
+    imageUrl:
+      'https://placemat.imgix.net/placeholder_images/images/000/000/125/original/10860237285_85c4152b59_b.jpg?ixlib=rb-1.0.0&w=350&h=&fm=auto&crop=faces%2Centropy&fit=crop&txt=350%C3%97&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=a471c155fe5eee7a012f64420d7c549d',
     gpa: 3.72
   },
   {
     firstName: 'Zach',
     lastName: 'Cain',
     email: 'zach.cain@pbu.edu',
-    imageUrl: 'https://placem.at/people?w=350&random=1',
+    imageUrl:
+      'https://placemat.imgix.net/placeholder_images/images/000/000/096/original/14916514951_29dca03ae6_b.jpg?ixlib=rb-1.0.0&w=350&h=&fm=auto&crop=faces%2Centropy&fit=crop&txt=350%C3%97&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=4623f83d6b489a05bd7940f66ddf9111',
     gpa: 3.12
   },
   {
     firstName: 'Jake',
     lastName: 'Belcher',
     email: 'jake.belcher@pbu.edu',
-    imageUrl: 'https://placem.at/people?w=350&random=1',
+    imageUrl:
+      'https://placemat.imgix.net/placeholder_images/images/000/000/098/original/14213500913_c8af84b061_b.jpg?ixlib=rb-1.0.0&w=350&h=&fm=auto&crop=faces%2Centropy&fit=crop&txt=350%C3%97&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=8f2c731dd1c42cb4233feed3930092a1',
     gpa: 2.83
   },
   {
     firstName: 'Sean',
     lastName: 'Snoke',
     email: 'sean.snoke@purdue.edu',
-    imageUrl: 'https://placem.at/people?w=350&random=1',
+    imageUrl:
+      'https://placemat.imgix.net/placeholder_images/images/000/000/076/original/8172922880_14b5a6ee02_k.jpg?ixlib=rb-1.0.0&w=350&h=&fm=auto&crop=faces%2Centropy&fit=crop&txt=350%C3%97&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=b278212bab97cdd8af9f231de3dd729c',
     gpa: 3.12
   },
   {
     firstName: 'Sarah',
     lastName: 'Ferguson',
     email: 'sarah.ferguson@wcu.edu',
-    imageUrl: 'https://placem.at/people?w=350&random=1',
+    imageUrl:
+      'https://placemat.imgix.net/placeholder_images/images/000/000/104/original/9775128725_ee46c8cc8c_b.jpg?ixlib=rb-1.0.0&w=350&h=&fm=auto&crop=faces%2Centropy&fit=crop&txt=350%C3%97&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=428d83781b5c9e532a6edc367a3f4ea6',
     gpa: 3.82
   }
 ];

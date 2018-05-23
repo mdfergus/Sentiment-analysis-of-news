@@ -18,8 +18,8 @@ const Student = db.define('students', {
     }
   },
   imageUrl: {
-    type: Sequelize.STRING,
-    defaultValue: 'https://www.fillmurray.com/200/300',
+    type: Sequelize.TEXT,
+    defaultValue: 'https://placem.at/people?w=350&random=1',
     validate: {
       isUrl: true
     }

@@ -5,7 +5,7 @@ const StudentUnit = props => {
   const info = props.info;
 
   return (
-    <div className="student row" key={info.id}>
+    <div className="shake student row" key={info.id}>
       <div className="column">
         <Link to={`/students/${info.id}`}>
           <h3>

@@ -7,7 +7,7 @@ const Campus = db.define('campus', {
     allowNull: false
   },
   imageUrl: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     defaultValue: 'https://in.reel-scout.com/up_images/0/1001560.jpg',
     validate: {
       isUrl: true
