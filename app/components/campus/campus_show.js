@@ -6,20 +6,26 @@ const CampusShow = props => {
 
   return (
     <div>
-      <div>
-        <img src={info.imageUrl} />
-        <div>
+      <div className="row">
+        <div className="two columns" />
+        <img src={info.imageUrl} className="six columns" />
+        <div className="four columns">
           <h1>{info.name}</h1>
           <p>{info.description}</p>
+          <p>{info.address}</p>
         </div>
       </div>
-      <div>
-        <Link to={`/Campuses/edit/${info.id}`}>
-          <h4>Edit Campus</h4>
-        </Link>
-        <Link to={`/Campuses/delete/${info.id}`}>
-          <h4>Delete Campus</h4>
-        </Link>
+      <div className="row">
+        <div className="three columns">
+          <Link to={`/Campuses/edit/${info.id}`}>
+            <h4>Edit Campus</h4>
+          </Link>
+        </div>
+        <div className="three columns">
+          <Link to={`/Campuses/delete/${info.id}`}>
+            <h4>Delete Campus</h4>
+          </Link>
+        </div>
       </div>
     </div>
   );

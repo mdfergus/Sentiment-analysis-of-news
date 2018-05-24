@@ -29,7 +29,7 @@ export default class Students extends Component {
             <h4>Add Student</h4>
             {/* </Link> */}
           </div>
-          <div className="rowStudent">
+          <div className="flex-container">
             {studentsArray.map(student => (
               <StudentCard info={student} key={student.id} />
             ))}

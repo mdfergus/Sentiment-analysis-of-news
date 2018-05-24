@@ -24,8 +24,9 @@ export default class Students extends Component {
       const studentsArray = this.state.students;
       return (
         <div>
-          <div>
-            <h1>All Currently Enrolled Students</h1>
+          <div className="row">
+            <div className="six columns" />
+            <h1 className="nine columns">All Currently Enrolled Students</h1>
           </div>
           <div className="rowStudent">
             {studentsArray.map(student => {

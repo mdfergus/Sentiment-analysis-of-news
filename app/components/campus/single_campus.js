@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import CampusCard from './campus_card';
+import CampusShow from './campus_show';
 import StudentsSearch from './students_search';
 
 export default class SingleCampus extends Component {
@@ -25,7 +25,7 @@ export default class SingleCampus extends Component {
     } else {
       return (
         <div id="single-todo">
-          <CampusCard info={campus} />
+          <CampusShow info={campus} />
           <StudentsSearch info={campus} />
           <Link to="/campuses">Back</Link>
         </div>

@@ -21,19 +21,25 @@ export default class StudentCard extends Component {
     const campus = this.state.campus;
 
     return (
-      <div className="shake student row" key={info.id}>
-        <div className="column">
-          <Link to={`/students/${info.id}`}>
-            <h3>
-              {info.lastName}, {info.firstName}
-            </h3>
-          </Link>
-          <Link to={`/campuses/${campus.id}`}>
-            <p>{campus.name}</p>
-          </Link>
+      <div className="wrap">
+        <div className="row" key={info.id}>
+          <div className="one column" />
+          <div className="eleven columns">
+            <img src={info.imageUrl} />
+          </div>
         </div>
-        <div className="column">
-          <img src={info.imageUrl} />
+        <div className="row">
+          <div className="one column" />
+          <div>
+            <Link to={`/students/${info.id}`}>
+              <h4 className="dont-wrap">
+                {info.lastName}, {info.firstName}
+              </h4>
+            </Link>
+            <Link to={`/campuses/${campus.id}`}>
+              <h5>{campus.name}</h5>
+            </Link>
+          </div>
         </div>
       </div>
     );
