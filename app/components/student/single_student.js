@@ -1,31 +1,39 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import StudentUnit from './student_unit';
+import StudentShow from './student_show';
+import CampusSelect from './campus_select';
 
 export default class SingleStudent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      student: {}
+      student: {},
+      campus: {}
     };
   }
 
   async componentDidMount() {
     const id = this.props.match.params.id;
     const res = await axios.get(`/api/students/${id}`);
-    this.setState({ student: res.data });
+    const campus = await axios.get(`/api/campuses/${res.data.campusId}`);
+    this.setState({ student: res.data, campus: campus.data });
+    // /, campus: campus.data
   }
 
   render() {
     const student = this.state.student;
+    const campus = this.state.campus;
     if (student.id === undefined) {
       return <h3>Loading student...</h3>;
     } else {
       return (
         <div id="single-todo">
-          <StudentUnit info={student} />
-          <Link to="/students">Back</Link>
+          <StudentShow info={student} />
+          <CampusSelect info={campus} />
+          <button>
+            <Link to="/students">Back</Link>
+          </button>
         </div>
       );
     }
