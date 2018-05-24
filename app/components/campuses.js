@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import CampusUnit from './campus/campus_unit';
+import CampusCard from './campus/campus_card';
 
 export default class Campuses extends Component {
   constructor() {
@@ -26,7 +26,7 @@ export default class Campuses extends Component {
           <h1>All Current Schools</h1>
           <div className="rowSchool">
             {campusesArray.map(school => (
-              <CampusUnit info={school} key={school.id} />
+              <CampusCard info={school} key={school.id} />
             ))}
           </div>
         </div>

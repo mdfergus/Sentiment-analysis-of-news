@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CampusUnit = props => {
+const CampusCard = props => {
   const info = props.info;
 
   return (
@@ -20,4 +20,4 @@ const CampusUnit = props => {
   );
 };
 
-export default CampusUnit;
+export default CampusCard;
