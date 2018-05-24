@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const StudentShow = props => {
   const info = props.info;
-
+  const deleteStudent = props.deleteStudent;
   return (
     <div>
       <div className="row">
@@ -23,9 +24,13 @@ const StudentShow = props => {
         <Link to={`/students/edit/${info.id}`} className="three columns">
           <h4>Edit Student</h4>
         </Link>
-        <Link to={`/students/delete/${info.id}`} className="three columns">
-          <h4>Delete Student</h4>
-        </Link>
+        <button
+          type="submit"
+          className="three columns"
+          onClick={() => deleteStudent()}
+        >
+          Delete Student
+        </button>
       </div>
     </div>
   );

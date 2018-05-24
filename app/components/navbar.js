@@ -5,7 +5,7 @@ const StudentUnit = props => {
   const info = props.info;
 
   return (
-    <div className="row">
+    <div className="row navbar">
       <div className="two columns"> . </div>
       <div className="three columns">
         <Link to="/">

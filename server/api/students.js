@@ -19,4 +19,19 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+router.delete('/:id', async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    await Student.destroy({
+      where: {
+        id
+      }
+    });
+    console.log('delete');
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
