@@ -28,7 +28,7 @@ export default class Students extends Component {
             <div className="six columns" />
             <h1 className="nine columns">All Currently Enrolled Students</h1>
           </div>
-          <div className="rowStudent">
+          <div className="flex-container">
             {studentsArray.map(student => {
               if (student.campusId === campusId) {
                 return <StudentCard info={student} key={student.id} />;

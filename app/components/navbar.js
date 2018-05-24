@@ -6,7 +6,7 @@ const StudentUnit = props => {
 
   return (
     <div className="row">
-      <div className="three columns" />
+      <div className="two columns"> . </div>
       <div className="three columns">
         <Link to="/">
           <h3>Home</h3>

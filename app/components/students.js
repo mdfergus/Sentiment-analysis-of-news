@@ -24,10 +24,18 @@ export default class Students extends Component {
       return (
         <div>
           <div>
-            <h1>All Currently Enrolled Students</h1>
-            {/* <Link to="/students/new/"> */}
-            <h4>Add Student</h4>
-            {/* </Link> */}
+            <div className="row">
+              <div className="one column" />
+              <h1 className="eleven columns">
+                All Currently Enrolled Students
+              </h1>
+            </div>
+            <div className="row">
+              <div className="one column" />
+              {/* <Link to="/students/new/"  className="eleven columns"> */}
+              <h4 className="eleven columns">Add Student</h4>
+              {/* </Link> */}
+            </div>
           </div>
           <div className="flex-container">
             {studentsArray.map(student => (

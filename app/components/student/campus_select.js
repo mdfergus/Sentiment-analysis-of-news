@@ -23,18 +23,30 @@ export default class CampusSelect extends Component {
     } else {
       return (
         <div>
-          <h3>This Student is Registered to: {info.name}</h3>
-          <div>
+          <h2 />
+          <div className="row">
+            <div className="one column" />
+            <h3 className="eleven columns">
+              This Student is Registered to: {info.name}
+            </h3>
+          </div>
+          <div className="row">
+            <div className="one column" />
             <CampusCard info={info} />
-            <form>
-              <select type="select" label="Multiple Select">
+            <form className="row">
+              <div className="one column" />
+              <select
+                type="select"
+                label="Multiple Select"
+                className="five columns"
+              >
                 {this.state.campuses.map(campus => (
                   <option value={campus.name} key={campus.id}>
                     {campus.name}
                   </option>
                 ))}
               </select>
-              <button>Change Student's Campus</button>
+              <button className="three columns">Change Student's Campus</button>
             </form>
           </div>
         </div>

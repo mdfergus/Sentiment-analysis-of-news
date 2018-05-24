@@ -27,7 +27,9 @@ export default class SingleCampus extends Component {
         <div id="single-todo">
           <CampusShow info={campus} />
           <StudentsSearch info={campus} />
-          <Link to="/campuses">Back</Link>
+          <Link to="/campuses">
+            <h1>Back</h1>
+          </Link>
         </div>
       );
     }

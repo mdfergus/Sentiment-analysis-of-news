@@ -23,8 +23,7 @@ export default class StudentCard extends Component {
     return (
       <div className="wrap">
         <div className="row" key={info.id}>
-          <div className="one column" />
-          <div className="eleven columns">
+          <div className="twelve columns">
             <img src={info.imageUrl} />
           </div>
         </div>

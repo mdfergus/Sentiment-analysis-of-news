@@ -22,8 +22,9 @@ export default class Campuses extends Component {
     } else {
       const campusesArray = this.state.campuses;
       return (
-        <div>
-          <h1>All Current Schools</h1>
+        <div className="row">
+          <div className="one column" />
+          <h1 className="eleven columns">All Current Schools</h1>
           <div className="rowSchool">
             {campusesArray.map(school => (
               <CampusCard info={school} key={school.id} />

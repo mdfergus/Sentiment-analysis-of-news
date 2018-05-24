@@ -28,12 +28,13 @@ export default class SingleStudent extends Component {
       return <h3>Loading student...</h3>;
     } else {
       return (
-        <div id="single-todo">
+        <div className="row">
           <StudentShow info={student} />
           <CampusSelect info={campus} />
-          <button>
-            <Link to="/students">Back</Link>
-          </button>
+          <div className="one column" />
+          <Link to="/students" className="three columns">
+            <h1>Back</h1>
+          </Link>
         </div>
       );
     }

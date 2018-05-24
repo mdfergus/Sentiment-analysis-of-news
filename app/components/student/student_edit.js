@@ -9,31 +9,30 @@ const StudentEdit = props => {
       <div>
         <form>
           <div className="row">
-            <br />
-            Student first name:<br />
-            <input type="text" name="firstname" />
+            <div className="one column" />
+            <p className="three columns">Student first name:</p>
+            <input type="text" name="firstname" className="five columns" />
           </div>
           <div className="row">
-            <br />
-            Student last name:<br />
-            <input type="text" name="lastname" />
+            <div className="one column" />
+            <p className="three columns">Student last name:</p>
+            <input type="text" name="lastname" className="five columns" />
           </div>
           <div className="row">
-            <br />
-            GPA:<br />
-            <input type="text" name="gpa" />
+            <div className="one column" />
+            <p className="three columns">GPA:</p>
+            <input type="text" name="gpa" className="five columns" />
           </div>
           <div className="row">
-            <br />
-            Image URL:<br />
-            <input type="text" name="imageUrl" />
+            <div className="one column" />
+            <p className="three columns">Image URL:</p>
+            <input type="text" name="imageUrl" className="five columns" />
           </div>
-          <br />
-          <button>Submit Changes</button>
+          <div className="row">
+            <p className="three column" />
+            <button className="three columns">Submit Changes</button>
+          </div>
         </form>
-      </div>
-      <div>
-        <img />
       </div>
     </div>
   );
