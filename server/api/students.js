@@ -19,6 +19,26 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+router.put('/', async (req, res, next) => {
+  try {
+    const info = req.body;
+    console.log(info);
+    await Student.update(
+      {
+        firstName: info.firstName,
+        lastName: info.lastName,
+        email: info.email,
+        imageUrl: info.imageUrl,
+        gpa: info.gpa
+      },
+      { where: { id: info.id } }
+    );
+    res.send(info.id);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.delete('/:id', async (req, res, next) => {
   try {
     const id = req.params.id;
@@ -27,7 +47,6 @@ router.delete('/:id', async (req, res, next) => {
         id
       }
     });
-    console.log('delete');
     res.send(id);
   } catch (error) {
     next(error);

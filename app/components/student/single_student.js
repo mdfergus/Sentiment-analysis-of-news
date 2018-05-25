@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, Route } from 'react-router';
+import { Redirect } from 'react-router';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import StudentShow from './student_show';
@@ -24,7 +24,6 @@ export default class SingleStudent extends Component {
 
   deleteStudent = async () => {
     const id = this.state.student.id;
-    console.log(`/api/students/${id}`);
     await axios.delete(`/api/students/${id}`);
     this.setState({ deleted: true });
   };

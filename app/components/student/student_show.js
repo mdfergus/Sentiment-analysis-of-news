@@ -21,8 +21,12 @@ const StudentShow = props => {
       </div>
       <div className="row">
         <div className="one column" />
-        <Link to={`/students/edit/${info.id}`} className="three columns">
-          <h4>Edit Student</h4>
+        <Link
+          to={`/students/edit/${info.id}`}
+          className="three columns"
+          bob={info}
+        >
+          <button>Edit Student</button>
         </Link>
         <button
           type="submit"
