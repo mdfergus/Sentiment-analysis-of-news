@@ -42,7 +42,7 @@ export default class SingleStudent extends Component {
           <CampusSelect info={campus} />
           <div className="one column" />
           <Link to="/students" className="three columns">
-            <h1>Back</h1>
+            <button type="button">Back</button>
           </Link>
         </div>
       );

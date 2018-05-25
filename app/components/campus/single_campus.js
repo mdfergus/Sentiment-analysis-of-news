@@ -28,7 +28,7 @@ export default class SingleCampus extends Component {
           <CampusShow info={campus} />
           <StudentsSearch info={campus} />
           <Link to="/campuses">
-            <h1>Back</h1>
+            <button type="button">Back</button>
           </Link>
         </div>
       );

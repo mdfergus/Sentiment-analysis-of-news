@@ -7,20 +7,23 @@ const StudentUnit = props => {
   return (
     <div className="row navbar">
       <div className="two columns"> . </div>
-      <div className="three columns">
-        <Link to="/">
-          <h3>Home</h3>
-        </Link>
-      </div>
-      <div className="three columns">
-        <Link to="/students">
-          <h3>Students</h3>
-        </Link>
-      </div>
-      <div className="three columns">
-        <Link to="/campuses">
-          <h3>Campuses</h3>
-        </Link>
+      <div className="ten columns flex-container-right">
+        <img src="/logosm.png" />
+        <div className="space-between">
+          <Link to="/">
+            <h5>Home</h5>
+          </Link>
+        </div>
+        <div className="space-between">
+          <Link to="/students">
+            <h5>Students</h5>
+          </Link>
+        </div>
+        <div className="space-between">
+          <Link to="/campuses">
+            <h5>Campuses</h5>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -4,19 +4,28 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div>
-      <div className="home school">
-        <div className="homeText">
-          <h2>Taiyaki wayfarers YOLO, palo santo craft beer!</h2>
+      <div className="row">
+        <div className="one column" />
+        <div className="four columns ">
+          <h3 className="main-title">Students and the Campuses</h3>
+          <p>
+            Prep is mobile registry solution to easily manage students. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
         </div>
-        <div>
+        <div className="seven columns">
           <img src="https://static.intsig.net/camscanner/images/user/banner_mobile.png" />
         </div>
       </div>
       <div className="spanner">
-        <h3>Enroll your Campus Today</h3>
+        <h3>Enroll your school today</h3>
       </div>
-      <div className="home school">
-        <div>
+      <div className="row green">
+        <div className="green one column" />
+        <div className="green six columns">
           <p>
             Lorem ipsum dolor amet vice letterpress authentic, humblebrag salvia
             enamel pin knausgaard woke four dollar toast venmo franzen actually
@@ -43,40 +52,49 @@ const Home = () => {
             tofu coloring book, gochujang cred pork belly single-origin coffee
             artisan edison bulb snackwave man braid letterpress cray.{' '}
           </p>
-          <h3>Including:</h3>
-          <ul>
-            <li>Pabst</li>
-            <li>Intelligentsia</li>
-            <li>Green juice </li>
-            <li>Brooklyn </li>
-            <li>Drinking vinegar </li>
-            <li>Asymmetrical</li>
-            <li>Four dollar toast!</li>
-          </ul>
         </div>
-        <div>
+        <div className="green five columns">
           <h2>GET IT NOW!</h2>
           <form>
-            <label>
-              Name:
-              <input type="text" name="name" />
-            </label>
-            <label>
-              Email:
-              <input type="text" name="email" />
-            </label>
-            <label>
-              Campus Name:
-              <input type="text" name="campus" />
-            </label>
-            <label>
-              Referral Code:
-              <input type="text" name="referral" />
-            </label>
-            <label>
-              Receive future notieces:
-              <input type="checkbox" name="notices" />
-            </label>
+            <div className="row">
+              <label>
+                <div className="four columns">Name:</div>
+                <input type="text" name="name" className="seven columns" />
+              </label>
+            </div>
+            <div className="row">
+              <label>
+                <div className="four columns">Email:</div>
+                <input type="text" name="email" className="seven columns" />
+              </label>
+            </div>
+            <div className="row">
+              <label>
+                <div className="four columns">Campus Name:</div>
+                <input type="text" name="campus" className="seven columns" />
+              </label>
+            </div>
+            <div className="row">
+              <label>
+                <div className="four columns">Referral Code:</div>
+                <input type="text" name="referral" className="seven columns" />
+              </label>
+            </div>
+            <div className="row">
+              <label>
+                <div className="four columns">Receive future notieces:</div>
+                <input
+                  type="checkbox"
+                  name="notices"
+                  className="five columns check"
+                />
+              </label>
+            </div>
+            <div className="row">
+              <button type="button" className="four columns">
+                Enroll me!
+              </button>
+            </div>
           </form>
         </div>
       </div>
