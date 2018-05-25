@@ -17,11 +17,18 @@ export default class Students extends Component {
   };
 
   render() {
-    const campusId = this.props.info.id;
     if (this.state.students[0] === null) {
       return <h3>Loading students....</h3>;
+    }
+
+    const campusId = this.props.info.id;
+    const studentsArray = this.state.students.filter(
+      student => student.campusId === campusId
+    );
+
+    if (studentsArray.length === 0) {
+      return <h3>No students enrolled in this campus</h3>;
     } else {
-      const studentsArray = this.state.students;
       return (
         <div>
           <div className="row">

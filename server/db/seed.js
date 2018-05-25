@@ -47,6 +47,22 @@ const students = [
     imageUrl:
       'https://placemat.imgix.net/placeholder_images/images/000/000/104/original/9775128725_ee46c8cc8c_b.jpg?ixlib=rb-1.0.0&w=350&h=&fm=auto&crop=faces%2Centropy&fit=crop&txt=350%C3%97&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=428d83781b5c9e532a6edc367a3f4ea6',
     gpa: 3.82
+  },
+  {
+    firstName: 'Danielle',
+    lastName: 'Levine',
+    email: 'danielle.levine@shu.edu',
+    imageUrl:
+      'https://placemat.imgix.net/placeholder_images/images/000/000/104/original/9775128725_ee46c8cc8c_b.jpg?ixlib=rb-1.0.0&w=350&h=&fm=auto&crop=faces%2Centropy&fit=crop&txt=350%C3%97&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=428d83781b5c9e532a6edc367a3f4ea6',
+    gpa: 3.82
+  },
+  {
+    firstName: 'Elyssa',
+    lastName: 'Levine',
+    email: 'elyssa.levine@tcnj.edu',
+    imageUrl:
+      'https://placemat.imgix.net/placeholder_images/images/000/000/104/original/9775128725_ee46c8cc8c_b.jpg?ixlib=rb-1.0.0&w=350&h=&fm=auto&crop=faces%2Centropy&fit=crop&txt=350%C3%97&txtclr=BFFF&txtalign=middle%2Ccenter&txtfit=max&txtsize=42&txtfont=Avenir+Next+Demi%2CBold&bm=multiply&blend=ACACAC&s=428d83781b5c9e532a6edc367a3f4ea6',
+    gpa: 3.82
   }
 ];
 
@@ -66,7 +82,7 @@ const campus = [
     description: `West Chester University of Pennsylvania (WCUPA) is a public university located in West Chester, Pennsylvania, about 25 miles (40 km) west of Philadelphia. It is the largest of the 14 state universities of the Pennsylvania State System of Higher Education (PASSHE). West Chester was ranked 61st in the Master's Universities (North) category by U.S. News & World Report for 2017. The school is accredited by the Middle States Association of Colleges and Schools (MSACS).`
   },
   {
-    name: 'Cairn University (Philadelphia Biblical University)',
+    name: 'Cairn University',
     imageUrl:
       'http://civa.org/sitecontent/wp-content/uploads/education-cairn-header.jpg',
     address: '200 Manor Ave, Langhorne, PA 19047',
@@ -80,6 +96,13 @@ const campus = [
     description: `The United States Air Force Academy (also known as USAFA, the Air Force Academy, or the Academy), is a military academy for officer cadets of the United States Air Force. Its campus is located in the western United States in Colorado, immediately north of Colorado Springs in El Paso County.
 
     The Academy's stated mission is "to educate, train, and inspire men and women to become leaders of character, motivated to lead the United States Air Force in service to our nation." It is the youngest of the five U.S. service academies, having graduated its first class 59 years ago in 1959, however it is the third in seniority. Graduates of the Academy's four-year program receive a Bachelor of Science degree, and are commissioned as second lieutenants in the U.S. Air Force. The Academy is also one of the largest tourist attractions in Colorado, attracting approximately a million visitors each year.`
+  },
+  {
+    name: 'Seton Hall University',
+    imageUrl: 'http://www7.shu.edu/admissions/images/pathway-to-preshall.jpg',
+    address: '1109 Raymond Blvd, Newark, NJ 07102',
+    description: `Seton Hall University is a private Roman Catholic university in South Orange, New Jersey, United States. Founded in 1856 by then-Bishop James Roosevelt Bayley and named after his aunt, Saint Elizabeth Ann Seton, Seton Hall is the oldest diocesan university in the United States.
+    Seton Hall consists of 11 schools and colleges with an undergraduate enrollment of about 5,800 students and a graduate enrollment of about 4,400. It was ranked tied for 118th in Best National Universities by U.S. News & World Report in 2017, with the School of Law ranked tied for 63rd. The Stillman School of Business was ranked 78th of 132 undergraduate business schools in the nation by Bloomberg Businessweek in 2014.`
   }
 ];
 
