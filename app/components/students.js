@@ -19,6 +19,24 @@ export default class Students extends Component {
   render() {
     if (this.state.students[0] === null) {
       return <h3>Loading students....</h3>;
+    } else if (!this.state.students.length) {
+      console.log(this.state.students);
+      return (
+        <div>
+          <div className="row">
+            <div className="one column" />
+            <h3 className="eleven columns">Sorry there are no students</h3>
+          </div>
+          <div className="row">
+            <div className="one column" />
+            <Link to="/students/new/" className="eleven columns">
+              <button type="button" className="three columns">
+                Add Student
+              </button>
+            </Link>
+          </div>
+        </div>
+      );
     } else {
       const studentsArray = this.state.students;
       return (
@@ -33,7 +51,7 @@ export default class Students extends Component {
             <div className="row">
               <div className="one column" />
               <Link to="/students/new/" className="eleven columns">
-                <button type="button" className="two columns">
+                <button type="button" className="three columns">
                   Add Student
                 </button>
               </Link>

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const CampusCard = props => {
   const info = props.info;
-  console.log(info);
   if (!info.id) {
     return (
       <div className="row">

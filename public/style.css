@@ -23,6 +23,11 @@
   vertical-align: middle;
 }
 
+.student-select-img {
+  min-height: 200px;
+  overflow: hidden;
+}
+
 .wrap {
   flex-basis: 10em;
   min-width: 200px;
@@ -97,4 +102,15 @@ div h3:hover {
 
 .check {
   font-size: 60px;
+}
+
+.unsubmitted {
+  opacity: 0;
+  font-size: 20px;
+}
+
+.submitted {
+  opacity: 1;
+  font-size: 20px;
+  transition: opacity 0.5s ease-in;
 }

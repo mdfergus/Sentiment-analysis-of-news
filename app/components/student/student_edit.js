@@ -10,7 +10,8 @@ export default class StudentEdit extends Component {
       lastName: '',
       email: '',
       imageUrl: '',
-      gpa: 2.5
+      gpa: 2.5,
+      status: 'unsubmitted three columns'
     };
   }
 
@@ -36,11 +37,13 @@ export default class StudentEdit extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     await axios.put('/api/students', this.state);
+    this.setState({
+      status: 'submitted three columns'
+    });
   };
 
   render() {
     const info = this.props.info;
-    console.log(this.state);
 
     return (
       <div>
@@ -104,6 +107,8 @@ export default class StudentEdit extends Component {
             <div className="row">
               <p className="three column" />
               <button className="three columns">Submit Changes</button>
+              <div className="one column" />
+              <p className={this.state.status}>Canges Submitted!</p>
             </div>
           </form>
         </div>

@@ -6,14 +6,19 @@ export default class StudentCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      campus: {}
+      campus: {
+        id: '',
+        name: 'Not currently enrolled'
+      }
     };
   }
 
   UNSAFE_componentWillMount = async () => {
     const campusId = this.props.info.campusId;
-    const res = await axios.get(`/api/campuses/${campusId}`);
-    this.setState({ campus: res.data });
+    if (campusId !== null) {
+      const res = await axios.get(`/api/campuses/${campusId}`);
+      this.setState({ campus: res.data });
+    }
   };
 
   render = () => {
@@ -23,7 +28,7 @@ export default class StudentCard extends Component {
     return (
       <div className="wrap">
         <div className="row" key={info.id}>
-          <div className="twelve columns">
+          <div className="twelve columns student-select-img">
             <img src={info.imageUrl} />
           </div>
         </div>
