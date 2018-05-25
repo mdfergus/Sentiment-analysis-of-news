@@ -108,7 +108,7 @@ export default class StudentEdit extends Component {
               <p className="three column" />
               <button className="three columns">Submit Changes</button>
               <div className="one column" />
-              <p className={this.state.status}>Canges Submitted!</p>
+              <p className={this.state.status}>Changes Submitted!</p>
             </div>
           </form>
         </div>

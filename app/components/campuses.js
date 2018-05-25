@@ -19,6 +19,23 @@ export default class Campuses extends Component {
   render() {
     if (this.state.campuses[0] === null) {
       return <h3>Loading schools....</h3>;
+    } else if (this.state.campuses.length === 0) {
+      return (
+        <div>
+          <div className="row">
+            <div className="one column" />
+            <h3 className="eleven columns">Sorry there are no campuses</h3>
+          </div>
+          <div className="row">
+            <div className="one column" />
+            <Link to="/campuses/new/" className="eleven columns">
+              <button type="button" className="three columns">
+                Add Campus
+              </button>
+            </Link>
+          </div>
+        </div>
+      );
     } else {
       const campusesArray = this.state.campuses;
       return (
