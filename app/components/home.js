@@ -25,11 +25,11 @@ const Home = () => {
       </div>
       <div className="row green">
         <div className="green one column" />
-        <div className="green six columns">
+        <div className="green six columns home-text">
           <p>
             Lorem ipsum dolor amet vice letterpress authentic, humblebrag salvia
             enamel pin knausgaard woke four dollar toast venmo franzen actually
-            whatever stumptown.{' '}
+            whatever stumptown.
           </p>
           <p>
             Kinfolk lumbersexual hammock blog photo booth. Bitters banh mi
@@ -91,7 +91,7 @@ const Home = () => {
               </label>
             </div>
             <div className="row">
-              <button type="button" className="four columns">
+              <button type="button" className="four columns home-button">
                 Enroll me!
               </button>
             </div>

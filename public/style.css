@@ -135,3 +135,11 @@ div h3:hover {
   color: red;
   transition: opacity 0.5s ease-in;
 }
+
+.home-button {
+  background-color: #fffff0;
+}
+
+.home-text {
+  border-color: black;
+}
