@@ -32,11 +32,9 @@ export default class CampusEdit extends Component {
     const validate = 'no-error three columns';
     const value = event.target.value;
     if (
-      (event.target.name === 'imageUrl' &&
-        value.length > 3 &&
-        !value.includes('.') &&
-        !value.includes('/')) ||
-      value.includes(' ')
+      event.target.name === 'imageUrl' &&
+      ((value.length > 3 && !value.includes('.') && !value.includes('/')) ||
+        value.includes(' '))
     ) {
       this.setState({
         [event.target.name]: event.target.value,
