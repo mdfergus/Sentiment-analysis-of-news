@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 export default class CampusEdit extends Component {
   constructor(props) {
@@ -63,70 +64,74 @@ export default class CampusEdit extends Component {
   };
 
   render() {
-    return (
-      <div>
+    if (this.state.status === 'submitted three columns') {
+      return <Redirect to={`/campuses/show/${this.state.id}`} />;
+    } else {
+      return (
         <div>
-          <form onSubmit={this.handleSubmit}>
-            <div className="row">
-              <div className="one column" />
-              <p className="three columns">Campus name:</p>
-              <input
-                type="text"
-                name="name"
-                className="five columns"
-                value={this.state.name}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="row">
-              <div className="one column" />
-              <p className="three columns">Address:</p>
-              <input
-                type="text"
-                name="address"
-                className="five columns"
-                value={this.state.address}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="row">
-              <div className="one column" />
-              <p className="three columns">Description:</p>
-              <textarea
-                type="text"
-                rows="20"
-                name="description"
-                className="five columns"
-                value={this.state.description}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="row">
-              <div className="one column" />
-              <p className="three columns">Image URL:</p>
-              <input
-                type="text"
-                name="imageUrl"
-                className="five columns"
-                value={this.state.imageUrl}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="row">
-              <p className="three column" />
-              <button type="submit" className="three columns">
-                Submit Changes
-              </button>
-              <div className="one column" />
-              <p className={this.state.status}>Changes Submitted!</p>
-              <div className="one column" />
-              <p className={this.state.validate}>
-                There is an error in your submission
-              </p>
-            </div>
-          </form>
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              <div className="row">
+                <div className="one column" />
+                <p className="three columns">Campus name:</p>
+                <input
+                  type="text"
+                  name="name"
+                  className="five columns"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="row">
+                <div className="one column" />
+                <p className="three columns">Address:</p>
+                <input
+                  type="text"
+                  name="address"
+                  className="five columns"
+                  value={this.state.address}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="row">
+                <div className="one column" />
+                <p className="three columns">Description:</p>
+                <textarea
+                  type="text"
+                  rows="20"
+                  name="description"
+                  className="five columns"
+                  value={this.state.description}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="row">
+                <div className="one column" />
+                <p className="three columns">Image URL:</p>
+                <input
+                  type="text"
+                  name="imageUrl"
+                  className="five columns"
+                  value={this.state.imageUrl}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="row">
+                <p className="three column" />
+                <button type="submit" className="three columns">
+                  Submit Changes
+                </button>
+                <div className="one column" />
+                <p className={this.state.status}>Changes Submitted!</p>
+                <div className="one column" />
+                <p className={this.state.validate}>
+                  There is an error in your submission
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }

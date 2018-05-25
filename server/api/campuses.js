@@ -19,18 +19,8 @@ router.get('/show/:id', async (req, res, next) => {
   }
 });
 
-router.get('/new', (req, res, next) => {
-  //campus new form
-  try {
-    res.send();
-  } catch (error) {
-    next(error);
-  }
-});
-
 router.post('/', async (req, res, next) => {
   try {
-    console.log('new form submitted');
     const info = req.body;
     const campus = await Campus.create({
       name: info.name,

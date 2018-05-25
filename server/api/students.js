@@ -10,15 +10,6 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/new', (req, res, next) => {
-  //student new form
-  try {
-    res.send();
-  } catch (error) {
-    next(error);
-  }
-});
-
 router.get('/show/:id', async (req, res, next) => {
   try {
     const student = await Student.findById(req.params.id);
