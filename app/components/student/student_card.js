@@ -16,7 +16,7 @@ export default class StudentCard extends Component {
   UNSAFE_componentWillMount = async () => {
     const campusId = this.props.info.campusId;
     if (campusId !== null) {
-      const res = await axios.get(`/api/campuses/${campusId}`);
+      const res = await axios.get(`/api/campuses/show/${campusId}`);
       this.setState({ campus: res.data });
     }
   };
@@ -40,7 +40,7 @@ export default class StudentCard extends Component {
                 {info.lastName}, {info.firstName}
               </h4>
             </Link>
-            <Link to={`/campuses/${campus.id}`}>
+            <Link to={`/campuses/show/${campus.id}`}>
               <h5>{campus.name}</h5>
             </Link>
           </div>

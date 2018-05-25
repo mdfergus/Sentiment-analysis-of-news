@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class StudentEdit extends Component {
+export default class CampusEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
       id: '',
-      firstName: '',
-      lastName: '',
-      email: '',
+      name: '',
+      address: '',
+      description: '',
       imageUrl: '',
-      gpa: 2.5,
       status: 'unsubmitted three columns',
       validate: 'no-error three columns'
     };
@@ -18,19 +17,15 @@ export default class StudentEdit extends Component {
 
   componentDidMount = async () => {
     const id = this.props.match.params.id;
-    const res = await axios.get(`/api/students/show/${id}`);
+    const res = await axios.get(`/api/campuses/show/${id}`);
     this.setState({
       id,
-      firstName: res.data.firstName,
-      lastName: res.data.lastName,
-      email: res.data.email,
-      imageUrl: res.data.imageUrl,
-      gpa: res.data.gpa
+      name: res.data.name,
+      address: res.data.address,
+      description: res.data.description,
+      imageUrl: res.data.imageUrl
     });
   };
-
-  // The below form validation is reeaaally ugly code, given more time I'd modulize this
-  // but given the time constraints I will not be able to do so
 
   handleChange = event => {
     const validate = 'no-error three columns';
@@ -41,16 +36,6 @@ export default class StudentEdit extends Component {
         !value.includes('.') &&
         !value.includes('/')) ||
       value.includes(' ')
-    ) {
-      this.setState({
-        [event.target.name]: event.target.value,
-        validate: 'error three columns'
-      });
-    } else if (
-      (event.target.name === 'firstName' && value.length === 0) ||
-      (event.target.name === 'lastName' && value.length === 0) ||
-      (event.target.name === 'email' &&
-        (!value.includes('.') || !value.includes('@') || value.length < 5))
     ) {
       this.setState({
         [event.target.name]: event.target.value,
@@ -70,7 +55,7 @@ export default class StudentEdit extends Component {
       this.state.validate !== 'error three columns' &&
       this.state.imageUrl.length > 3
     ) {
-      await axios.put('/api/students', this.state);
+      await axios.put('/api/campuses', this.state);
       this.setState({
         status: 'submitted three columns'
       });
@@ -84,45 +69,35 @@ export default class StudentEdit extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="one column" />
-              <p className="three columns">Student first name:</p>
+              <p className="three columns">Campus name:</p>
               <input
                 type="text"
-                name="firstName"
+                name="name"
                 className="five columns"
-                value={this.state.firstName}
+                value={this.state.name}
                 onChange={this.handleChange}
               />
             </div>
             <div className="row">
               <div className="one column" />
-              <p className="three columns">Student last name:</p>
+              <p className="three columns">Address:</p>
               <input
                 type="text"
-                name="lastName"
+                name="address"
                 className="five columns"
-                value={this.state.lastName}
+                value={this.state.address}
                 onChange={this.handleChange}
               />
             </div>
             <div className="row">
               <div className="one column" />
-              <p className="three columns">Email:</p>
-              <input
+              <p className="three columns">Description:</p>
+              <textarea
                 type="text"
-                name="email"
+                rows="20"
+                name="description"
                 className="five columns"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="row">
-              <div className="one column" />
-              <p className="three columns">GPA:</p>
-              <input
-                type="text"
-                name="gpa"
-                className="five columns"
-                value={this.state.gpa}
+                value={this.state.description}
                 onChange={this.handleChange}
               />
             </div>
@@ -139,7 +114,9 @@ export default class StudentEdit extends Component {
             </div>
             <div className="row">
               <p className="three column" />
-              <button className="three columns">Submit Changes</button>
+              <button type="submit" className="three columns">
+                Submit Changes
+              </button>
               <div className="one column" />
               <p className={this.state.status}>Changes Submitted!</p>
               <div className="one column" />

@@ -29,6 +29,14 @@
   overflow: hidden;
 }
 
+.row button {
+  margin: 20px 0;
+}
+
+.row select {
+  margin: 20px 0;
+}
+
 .wrap {
   flex-basis: 10em;
   min-width: 200px;
@@ -113,5 +121,17 @@ div h3:hover {
 .submitted {
   opacity: 1;
   font-size: 20px;
+  transition: opacity 0.5s ease-in;
+}
+
+.no-error {
+  opacity: 0;
+  font-size: 20px;
+}
+
+.error {
+  opacity: 1;
+  font-size: 20px;
+  color: red;
   transition: opacity 0.5s ease-in;
 }

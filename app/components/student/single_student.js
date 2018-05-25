@@ -20,7 +20,7 @@ export default class SingleStudent extends Component {
     const res = await axios.get(`/api/students/show/${id}`);
 
     if (res.data.campusId) {
-      const campus = await axios.get(`/api/campuses/${res.data.campusId}`);
+      const campus = await axios.get(`/api/campuses/show/${res.data.campusId}`);
       this.setState({ student: res.data, campus: campus.data });
     } else {
       this.setState({ student: res.data });

@@ -15,7 +15,7 @@ const CampusCard = props => {
       <div className="row" key={info.id}>
         <div className="one column" />
         <div className="five columns">
-          <Link to={`/campuses/${info.id}`}>
+          <Link to={`/campuses/show/${info.id}`}>
             <h3>{info.name}</h3>
           </Link>
           <p className="bold">Address: {info.address}</p>

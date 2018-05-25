@@ -20,7 +20,6 @@ export default class Students extends Component {
     if (this.state.students[0] === null) {
       return <h3>Loading students....</h3>;
     } else if (!this.state.students.length) {
-      console.log(this.state.students);
       return (
         <div>
           <div className="row">
