@@ -7,7 +7,9 @@ export default class CampusSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      campuses: {}
+      campuses: {},
+      currentCampus: this.props.info,
+      selectedCampusId: '1'
     };
   }
 
@@ -16,8 +18,29 @@ export default class CampusSelect extends Component {
     this.setState({ campuses: res.data });
   };
 
+  handleChange = event => {
+    this.setState({
+      selectedCampusId: event.target.value
+    });
+  };
+
+  handleSubmit = async event => {
+    event.preventDefault();
+    const campusId = this.state.selectedCampusId;
+    const studentId = this.props.studentId;
+
+    const newCampus = this.state.campuses.filter(ele => ele.id == campusId)[0];
+    await axios.put(`/api/students/${this.props.studentId}`, {
+      campusId,
+      studentId
+    });
+    this.setState({
+      currentCampus: newCampus
+    });
+  };
+
   render = () => {
-    const info = this.props.info;
+    const info = this.state.currentCampus;
     if (this.state.campuses[0] === undefined) {
       return <h3>Page Loading...</h3>;
     } else {
@@ -33,20 +56,23 @@ export default class CampusSelect extends Component {
           <div className="row">
             <div className="one column" />
             <CampusCard info={info} />
-            <form className="row">
+            <form className="row" onSubmit={this.handleSubmit}>
               <div className="one column" />
               <select
                 type="select"
                 label="Multiple Select"
                 className="five columns"
+                onChange={this.handleChange}
               >
                 {this.state.campuses.map(campus => (
-                  <option value={campus.name} key={campus.id}>
+                  <option value={campus.id} key={campus.id}>
                     {campus.name}
                   </option>
                 ))}
               </select>
-              <button className="three columns">Change Student's Campus</button>
+              <button type="submit" className="four columns">
+                Change Student's Campus
+              </button>
             </form>
           </div>
         </div>

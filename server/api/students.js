@@ -39,6 +39,17 @@ router.put('/', async (req, res, next) => {
   }
 });
 
+router.put('/:id', async (req, res, next) => {
+  try {
+    const info = req.body;
+    const campusId = info.campusId;
+    await Student.update({ campusId }, { where: { id: info.studentId } });
+    res.send(info);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.delete('/:id', async (req, res, next) => {
   try {
     const id = req.params.id;

@@ -39,7 +39,7 @@ export default class SingleStudent extends Component {
       return (
         <div className="row">
           <StudentShow info={student} deleteStudent={this.deleteStudent} />
-          <CampusSelect info={campus} />
+          <CampusSelect info={campus} studentId={student.id} />
           <div className="one column" />
           <Link to="/students" className="three columns">
             <button type="button">Back</button>
