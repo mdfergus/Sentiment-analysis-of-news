@@ -17,8 +17,8 @@ export default class Root extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/students" component={Students} />
         <Route exact path="/students/edit/:id" component={StudentEdit} />
-        {/* <Route exact path="/students/new/" component={StudentNew} /> */}
-        <Route exact path="/students/:id" component={SingleStudent} />
+        <Route exact path="/students/new/" component={StudentNew} />
+        <Route exact path="/students/show/:id" component={SingleStudent} />
         <Route exact path="/campuses" component={Campuses} />
         <Route exact path="/campuses/:id" component={SingleCampus} />
       </div>

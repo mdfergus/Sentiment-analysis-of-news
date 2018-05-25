@@ -32,9 +32,11 @@ export default class Students extends Component {
             </div>
             <div className="row">
               <div className="one column" />
-              {/* <Link to="/students/new/"  className="eleven columns"> */}
-              <h4 className="eleven columns">Add Student</h4>
-              {/* </Link> */}
+              <Link to="/students/new/" className="eleven columns">
+                <button type="button" className="two columns">
+                  Add Student
+                </button>
+              </Link>
             </div>
           </div>
           <div className="flex-container">

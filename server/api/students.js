@@ -10,7 +10,16 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/:id', async (req, res, next) => {
+router.get('/new', (req, res, next) => {
+  //student new form
+  try {
+    res.send();
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/show/:id', async (req, res, next) => {
   try {
     const student = await Student.findById(req.params.id);
     res.json(student);
@@ -19,10 +28,26 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
-router.put('/', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
   try {
     const info = req.body;
-    console.log(info);
+    const student = await Student.create({
+      firstName: info.firstName,
+      lastName: info.lastName,
+      email: info.email,
+      imageUrl: info.imageUrl,
+      gpa: info.gpa
+    });
+    res.json(student);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.put('/', async (req, res, next) => {
+  // student edit
+  try {
+    const info = req.body;
     await Student.update(
       {
         firstName: info.firstName,
@@ -40,6 +65,7 @@ router.put('/', async (req, res, next) => {
 });
 
 router.put('/:id', async (req, res, next) => {
+  // student change campus
   try {
     const info = req.body;
     const campusId = info.campusId;

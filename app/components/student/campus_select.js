@@ -7,15 +7,15 @@ export default class CampusSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      campuses: {},
-      currentCampus: this.props.info,
+      campuses: [],
+      currentCampus: {},
       selectedCampusId: '1'
     };
   }
 
   componentDidMount = async () => {
     const res = await axios.get(`/api/campuses`);
-    this.setState({ campuses: res.data });
+    this.setState({ campuses: res.data, currentCampus: this.props.info });
   };
 
   handleChange = event => {
@@ -56,25 +56,25 @@ export default class CampusSelect extends Component {
           <div className="row">
             <div className="one column" />
             <CampusCard info={info} />
-            <form className="row" onSubmit={this.handleSubmit}>
-              <div className="one column" />
-              <select
-                type="select"
-                label="Multiple Select"
-                className="five columns"
-                onChange={this.handleChange}
-              >
-                {this.state.campuses.map(campus => (
-                  <option value={campus.id} key={campus.id}>
-                    {campus.name}
-                  </option>
-                ))}
-              </select>
-              <button type="submit" className="four columns">
-                Change Student's Campus
-              </button>
-            </form>
           </div>
+          <form className="row" onSubmit={this.handleSubmit}>
+            <div className="one column" />
+            <select
+              type="select"
+              label="Multiple Select"
+              className="five columns"
+              onChange={this.handleChange}
+            >
+              {this.state.campuses.map(campus => (
+                <option value={campus.id} key={campus.id}>
+                  {campus.name}
+                </option>
+              ))}
+            </select>
+            <button type="submit" className="four columns">
+              Change Student's Campus
+            </button>
+          </form>
         </div>
       );
     }

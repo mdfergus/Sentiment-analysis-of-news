@@ -30,7 +30,7 @@ export default class StudentCard extends Component {
         <div className="row">
           <div className="one column" />
           <div>
-            <Link to={`/students/${info.id}`}>
+            <Link to={`/students/show/${info.id}`}>
               <h4 className="dont-wrap">
                 {info.lastName}, {info.firstName}
               </h4>

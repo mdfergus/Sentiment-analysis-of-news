@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default class StudentEdit extends Component {
@@ -17,7 +16,7 @@ export default class StudentEdit extends Component {
 
   componentDidMount = async () => {
     const id = this.props.match.params.id;
-    const res = await axios.get(`/api/students/${id}`);
+    const res = await axios.get(`/api/students/show/${id}`);
     this.setState({
       id,
       firstName: res.data.firstName,
