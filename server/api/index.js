@@ -1,6 +1,7 @@
 'use strict';
 
 const router = require('express').Router();
+const fs = require('fs');
 
 // Your routes go here!
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
@@ -19,8 +20,13 @@ const router = require('express').Router();
 // middleware will generate a 404, and send it to your
 // error-handling endware!
 
-router.use('/students', require('./students'));
-router.use('/campuses', require('./campuses'));
+router.get('/:source', (req, res, next) => {
+  const { articles } = JSON.parse(
+    fs.readFileSync(`../json/${req.params.source}.json`, 'utf8')
+  );
+  //console.log(articles)
+  res.json(articles.results);
+});
 
 router.use((req, res, next) => {
   const err = new Error('API route not found!');
