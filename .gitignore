@@ -4,7 +4,7 @@ node_modules/*
 # Compiled JS
 public/bundle.js
 public/bundle.js.map
-secrets.json
+Stackathon-b7310b498b75.json
 
 # NPM errors
 npm-debug.log
