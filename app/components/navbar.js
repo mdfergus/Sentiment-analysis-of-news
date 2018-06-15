@@ -1,32 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar, NavItem, Icon, SideNav, SideNavItem } from 'react-materialize';
 
-const StudentUnit = props => {
-  const info = props.info;
+class navbar extends Component {
+  render() {
+    return (
+      <SideNav
+        trigger={
+          <a>
+            <Icon>more_vert</Icon>
+          </a>
+        }
+        options={{ closeOnClick: true }}
+      >
+        <SideNavItem
+          userView
+          user={{
+            background: 'img/office.jpg',
+            image: 'img/yuna.jpg',
+            name: 'John Doe',
+            email: 'jdandturk@gmail.com'
+          }}
+        />
+      </SideNav>
+    );
+  }
+}
 
-  return (
-    <div className="row navbar">
-      <div className="two columns"> . </div>
-      <div className="ten columns flex-container-right">
-        <img src="/logosm.png" />
-        <div className="space-between">
-          <Link to="/">
-            <h5>Home</h5>
-          </Link>
-        </div>
-        <div className="space-between">
-          <Link to="/students">
-            <h5>Students</h5>
-          </Link>
-        </div>
-        <div className="space-between">
-          <Link to="/campuses">
-            <h5>Campuses</h5>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default StudentUnit;
+export default navbar;

@@ -12,3 +12,9 @@
   left: 50%;
   margin: -100px 0 0 -150px;
 }
+
+.autocomplete-content li img {
+  height: 0px;
+  width: 0px;
+  margin: 5px 15px;
+}
