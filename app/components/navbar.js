@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, NavItem, Icon, SideNav, SideNavItem } from 'react-materialize';
+import React from 'react';
+import { Icon, SideNav, SideNavItem } from 'react-materialize';
 
-class navbar extends Component {
-  render() {
-    return (
+export const navbar = () => {
+  return (
+    <div className="navbar">
       <SideNav
         trigger={
           <a>
@@ -15,16 +14,28 @@ class navbar extends Component {
       >
         <SideNavItem
           userView
+          edge="left"
           user={{
-            background: 'img/office.jpg',
-            image: 'img/yuna.jpg',
-            name: 'John Doe',
-            email: 'jdandturk@gmail.com'
+            background:
+              'https://78.media.tumblr.com/6340c283ac76139b339828ae26eab365/tumblr_nnalyaDSle1qzwmsso1_500.jpg',
+            name: 'Matt Ferguson',
+            email: 'mdfergus@gmail.com'
           }}
         />
+        <SideNavItem icon="art_track">About this project</SideNavItem>
+        <SideNavItem divider />
+        <SideNavItem subheader>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </SideNavItem>
       </SideNav>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default navbar;

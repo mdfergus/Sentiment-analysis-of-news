@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import Spinner from 'react-spinkit';
 import Search from './search';
+import Card from './article-card';
 
 class Home extends Component {
   state = {
@@ -22,7 +22,6 @@ class Home extends Component {
 
   render() {
     const info = this.state.info;
-
     if (!info[0]) {
       return (
         <div className="center">
@@ -33,14 +32,7 @@ class Home extends Component {
     return (
       <div>
         <Search handleSubmit={this.handleSubmit} />
-        {info.map(ele => (
-          <div>
-            <div>{ele.title}</div>
-            <div>{ele.magnitude}</div>
-            <div>{ele.emotion}</div>
-            <h2 />
-          </div>
-        ))}
+        {info.map(ele => <Card info={ele} key={ele.title} />)}
       </div>
     );
   }
