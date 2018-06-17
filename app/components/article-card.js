@@ -12,7 +12,7 @@ const Card = props => {
         <div className="card">
           <div className="card-content white-text">
             <span className="card-title">{info.title}</span>
-            <div className="row">
+            <div className="row thin">
               <div className="col m6">
                 <p>Positivity (negativity): </p>
               </div>
@@ -20,7 +20,7 @@ const Card = props => {
                 <p>{emotion}%</p>
               </div>
             </div>
-            <div className="row">
+            <div className="row thin">
               <div className="col m6">
                 <p>Emotional level: </p>
               </div>

@@ -86,26 +86,47 @@ body {
 /* Card CSS */
 
 .card {
-  background-color: #80849c;
+  background-color: #fff;
   box-shadow: 10px 10px 45px -13px rgba(0, 0, 0, 0.75);
 }
 
 .card .card-content,
 .card .card-action {
-  padding: 12px;
+  padding: 8px;
+  padding-left: 12px;
 }
 
 .card .card-content p,
 .card .card-content .card-title {
-  color: #f6f6fa;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+  color: rgb(83, 83, 83);
+  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75); */
 }
 
 .card
   .card-action
   a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #bfc1cd;
+  color: rgb(83, 83, 83);
   font-weight: bolder;
-  text-shadow: 1px 1px 4px #000;
+  /* text-shadow: 1px 1px 4px #000; */
   font-size: 18px;
+}
+
+.thin {
+  margin-bottom: 0;
+}
+
+input[type="text"]:focus:not([readonly]) + label {
+  color: #515777;
+}
+.dropdown-content li > span {
+  color: #ffc857;
+}
+
+input[type="text"]:focus:not([readonly]) {
+  border-bottom: 1px solid #515777;
+  box-shadow: 0 1px 0 0 #515777;
+}
+
+.mainPage {
+  margin-top: 25px;
 }

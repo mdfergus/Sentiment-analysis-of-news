@@ -6,6 +6,7 @@ const Search = props => {
   return (
     <Row>
       <Autocomplete
+        className="m8 push-m1"
         title="Sources"
         data={data}
         limit={5}
