@@ -130,3 +130,9 @@ input[type="text"]:focus:not([readonly]) {
 .mainPage {
   margin-top: 25px;
 }
+
+/* Chart */
+.chartContainer {
+  margin-bottom: 40px;
+  box-shadow: 10px 10px 45px -13px rgba(0, 0, 0, 0.75);
+}

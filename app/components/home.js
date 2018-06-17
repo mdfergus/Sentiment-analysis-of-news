@@ -7,22 +7,38 @@ import Chart from './chart';
 
 class Home extends Component {
   state = {
-    info: []
+    info: [],
+    source: 'The New York Times'
   };
 
   async componentDidMount() {
     //const res = await Axios.get('/api/nyt');
     const res = await Axios.get('/api/test-google-results');
     const info = res.data;
-    setTimeout(() => this.setState({ info }), 3000);
+    const oldState = this.state;
+    this.setState({ ...oldState, info });
   }
 
-  handleSubmit = value => {
-    console.log(value);
+  handleSubmit = async source => {
+    if (source === 'Mother Jones') {
+      source = 'motherjones';
+    } else if (source === 'DEBKAfile') {
+      source = 'debka';
+    } else if (source === 'The Economist') {
+      source = 'economist';
+    } else if (source === 'Frontpage Magazine') {
+      source = 'frontpage';
+    }
+
+    const res = await Axios.get(`/api/${source}/google`);
+    const info = res.data.analysis;
+    console.log(info);
+
+    this.setState({ info, source });
   };
 
   render() {
-    const info = this.state.info;
+    const { info, source } = this.state;
     if (!info[0]) {
       return (
         <div className="center">
@@ -33,7 +49,7 @@ class Home extends Component {
     return (
       <div className="mainPage">
         <Search handleSubmit={this.handleSubmit} />
-        <Chart info={info} />
+        <Chart info={info} source={source} />
         {info.map(ele => <Card info={ele} key={ele.title} />)}
       </div>
     );
