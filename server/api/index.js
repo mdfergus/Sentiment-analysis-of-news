@@ -42,10 +42,18 @@ router.get('/:source/google', async (req, res, next) => {
   }
 });
 
-router.get('/test-google-results', (req, res, next) => {
+router.get('/test-google-results-nyt', (req, res, next) => {
   //testing only!!!!
   const articles = JSON.parse(
-    fs.readFileSync(`./server/json/test-google-results.json`, 'utf8')
+    fs.readFileSync(`./server/json/test-google-results-nyt.json`, 'utf8')
+  );
+  res.json(articles.analysis);
+});
+
+router.get('/test-google-results-dallas', (req, res, next) => {
+  //testing only!!!!
+  const articles = JSON.parse(
+    fs.readFileSync(`./server/json/test-google-results-dallas.json`, 'utf8')
   );
   res.json(articles.analysis);
 });

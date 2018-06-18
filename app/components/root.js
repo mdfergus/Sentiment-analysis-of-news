@@ -13,10 +13,10 @@ const Root = () => {
         <div className="col m11">
           <div className="row">
             <div className="col m6">
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" render={() => <Home source="nyt" />} />
             </div>
             <div className="col m6">
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" render={() => <Home source="dallas" />} />
             </div>
           </div>
         </div>

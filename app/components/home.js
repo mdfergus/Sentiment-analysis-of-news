@@ -8,16 +8,22 @@ import Chart from './chart';
 class Home extends Component {
   state = {
     info: [],
-    source: 'The New York Times',
+    source: '',
     loading: false
   };
 
   async componentDidMount() {
-    //const res = await Axios.get('/api/nyt');
-    const res = await Axios.get('/api/test-google-results');
+    let source = this.props.source;
+
+    const res = await Axios.get(`/api/test-google-results-${source}`);
     const info = res.data;
     const oldState = this.state;
-    this.setState({ ...oldState, info });
+    if (source === 'nyt') {
+      source = 'The New York Times';
+    } else {
+      source = 'Dallas Morning News';
+    }
+    this.setState({ ...oldState, info, source });
   }
 
   handleSubmit = async source => {

@@ -25,13 +25,26 @@ export const navbar = () => {
         <SideNavItem icon="art_track">About this project</SideNavItem>
         <SideNavItem divider />
         <SideNavItem subheader>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          <p>
+            I built this site to analyze the relative positivity of new sources
+            compared to other large new sources. I provided data for both
+            center/unbiased, left leaning, right leaning, and conspiracy level
+            sources.
+          </p>
+          <p>
+            I used the EventRegistry.org API to pull each news source's 50 most
+            shared stories during the week June 4 - 8, 2018. I limited the news
+            stories to political and other issues dealing with government,
+            because of this, some sources had less than 50 stories during the
+            time period.
+          </p>
+          <p>
+            I then used Google's Cloud Natural Language sentiment analysis API
+            to analyze the body of each article. The Google API returned to me
+            the sentiment and emotional level of every sentence in each article,
+            I then combined the sentence level sentiment into an average
+            sentiment for each article.
+          </p>
         </SideNavItem>
       </SideNav>
     </div>

@@ -36,7 +36,7 @@ const Chart = props => {
   };
 
   var chartData = {
-    id: 'multi_chart',
+    id: 'multi_chart' + Math.random(),
     type: 'mscombi2d',
     width: '100%',
     height: 600,
