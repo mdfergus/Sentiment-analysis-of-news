@@ -128,11 +128,18 @@ input[type="text"]:focus:not([readonly]) {
 }
 
 .mainPage {
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 /* Chart */
 .chartContainer {
   margin-bottom: 40px;
+}
+
+.fusioncharts-container {
   box-shadow: 10px 10px 45px -13px rgba(0, 0, 0, 0.75);
+}
+
+.spinner {
+  margin-top: 30vh;
 }

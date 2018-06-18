@@ -8,7 +8,8 @@ import Chart from './chart';
 class Home extends Component {
   state = {
     info: [],
-    source: 'The New York Times'
+    source: 'The New York Times',
+    loading: false
   };
 
   async componentDidMount() {
@@ -20,29 +21,34 @@ class Home extends Component {
   }
 
   handleSubmit = async source => {
-    if (source === 'Mother Jones') {
-      source = 'motherjones';
-    } else if (source === 'DEBKAfile') {
-      source = 'debka';
-    } else if (source === 'The Economist') {
-      source = 'economist';
-    } else if (source === 'Frontpage Magazine') {
-      source = 'frontpage';
+    let searchVal = source;
+    if (searchVal === 'Mother Jones') {
+      searchVal = 'motherjones';
+    } else if (searchVal === 'DEBKAfile') {
+      searchVal = 'debka';
+    } else if (searchVal === 'The Economist') {
+      searchVal = 'economist';
+    } else if (searchVal === 'Frontpage Magazine') {
+      searchVal = 'frontpage';
     }
+    const oldState = this.state;
+    this.setState({ ...oldState, loading: true });
 
-    const res = await Axios.get(`/api/${source}/google`);
+    const res = await Axios.get(`/api/${searchVal}/google`);
     const info = res.data.analysis;
     console.log(info);
 
-    this.setState({ info, source });
+    this.setState({ info, source, loading: false });
   };
 
   render() {
     const { info, source } = this.state;
-    if (!info[0]) {
+    if (this.state.loading) {
       return (
-        <div className="center">
-          <Spinner name="ball-spin-fade-loader" color="coral" />
+        <div className="row">
+          <div className="col push-m5 spinner">
+            <Spinner name="ball-spin-fade-loader" color="coral" />
+          </div>
         </div>
       );
     }
